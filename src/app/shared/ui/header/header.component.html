@@ -1,1 +1,23 @@
-<p>header works!</p>
+
+<div #container>
+  <div #options>
+    <div class="option">
+      <fa-icon [icon]="faHouseChimney"></fa-icon>
+      <a [routerLink]="['/home']">Home</a>
+    </div>
+    <div class="option">
+      <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+      <a [routerLink]="['/buscar']">buscar</a>
+    </div>
+    <div class="option">
+      <fa-icon [icon]="faUser"></fa-icon>
+      <a [routerLink]="['/perfil']">perfil</a>
+    </div>
+  </div>
+  <div #exit>
+    <div class="option">
+        <fa-icon [icon]="faDoorOpen"></fa-icon>
+        <a [routerLink]="['/salir']">salir</a>
+      </div>
+  </div>
+</div>

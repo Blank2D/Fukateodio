@@ -1,33 +1,33 @@
-import { inject, Injectable } from "@angular/core";
-import { Root } from '../../shared/interfaces/personaje.interface'; 
-import { signalSlice } from "ngxtension/signal-slice";
-import { PersonajesService } from "./personajes.service";
-import { map } from "rxjs";
+import { inject, Injectable } from '@angular/core';
+import { signalSlice } from 'ngxtension/signal-slice';
+import { PersonajesService } from './personajes.service';
+import { map } from 'rxjs/operators';
+import { Result } from '../../shared/interfaces/personaje.interface'; 
 
-interface State{
-    personajes: Root[];
-    status: 'loading' | 'success' | 'error';
+interface State {
+  personajes: Result[];
+  status: 'loading' | 'success' | 'error';
 }
 
 @Injectable()
+export class PersonajeStateService {
 
-export class PersonajeStateService{
+  private personajesService = inject(PersonajesService);
 
-    private personajesService = inject(PersonajesService) ;
+  private initialState: State = {
+    personajes: [],
+    status: 'loading'
+  };
 
-    private initialState: State = {
-       personajes: [],
-       status: 'loading' as const,
-      };
-
-    state = signalSlice({
-        initialState: this.initialState,
-        sources:[
-            this.personajesService
-            .getPersonajes()
-            .pipe(map((personajes) => ({ personajes, status: 'success' as const}))),
-        ],
-    });
-
-
+  state = signalSlice({
+    initialState: this.initialState,
+    sources: [
+      this.personajesService.getPersonajes().pipe(
+        map(response => ({
+          personajes: response.results,
+          status: 'success' as const
+        }))
+      )
+    ]
+  });
 }

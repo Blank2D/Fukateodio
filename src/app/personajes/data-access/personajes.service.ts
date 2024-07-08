@@ -6,7 +6,7 @@ import { Root } from "../../shared/interfaces/personaje.interface";
 
 @Injectable({providedIn: 'root'})
 export class PersonajesService extends BaseHttpSerivce{
-    getPersonajes():Observable<Root[]>{
-        return this.http.get<any[]>(`${this.apiUrl}/character`);
+    getPersonajes():Observable<Root>{
+        return this.http.get<Root>(`${this.apiUrl}/character`);
     }
 }

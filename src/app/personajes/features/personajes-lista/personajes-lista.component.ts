@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { PersonajeStateService } from '../../data-access/personajes-state.service';
-import { PersonajesService } from '../../data-access/personajes.service';
+
 
 @Component({
   selector: 'app-personajes-lista',
@@ -8,9 +8,8 @@ import { PersonajesService } from '../../data-access/personajes.service';
   imports: [],
   templateUrl: './personajes-lista.component.html',
   styleUrl: './personajes-lista.component.scss',
-  providers: [PersonajeStateService, PersonajesService],
+  providers: [PersonajeStateService],
 })
 export default class PersonajesListaComponent {
   personajeState = inject(PersonajeStateService);
-  
 }
