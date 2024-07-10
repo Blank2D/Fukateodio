@@ -1,5 +1,8 @@
 
-<div #container>
+<div id="container">
+  <div id="nombre-app">
+    <h1>Nombre App</h1>
+  </div>
   <div #options>
     <div class="option">
       <fa-icon [icon]="faHouseChimney"></fa-icon>
@@ -7,17 +10,17 @@
     </div>
     <div class="option">
       <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
-      <a [routerLink]="['/buscar']">buscar</a>
+      <a [routerLink]="['/buscar']">Buscar</a>
     </div>
     <div class="option">
       <fa-icon [icon]="faUser"></fa-icon>
-      <a [routerLink]="['/perfil']">perfil</a>
+      <a [routerLink]="['/perfil']">Perfil</a>
     </div>
   </div>
-  <div #exit>
+  <div id="exit-option">
     <div class="option">
         <fa-icon [icon]="faDoorOpen"></fa-icon>
-        <a [routerLink]="['/salir']">salir</a>
+        <a [routerLink]="['/salir']">Salir</a>
       </div>
   </div>
 </div>

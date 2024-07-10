@@ -1,0 +1,15 @@
+<div class="card">
+    <img [src]="personaje().image" alt="{{ personaje().name }}" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{ personaje().name }}</h5>
+      <p class="card-text">
+        <strong>Status:</strong> {{ personaje().status }}<br>
+        <strong>Species:</strong> {{ personaje().species }}<br>
+        <strong>Gender:</strong> {{ personaje().gender }}<br>
+        <strong>Origin:</strong> {{ personaje().origin.name }}<br>
+        <strong>Location:</strong> {{ personaje().location.name }}<br>
+      </p>
+      <a [href]="personaje().url" target="_blank" class="btn btn-primary">Ver Perfil</a>
+    </div>
+  </div>
+  

@@ -1,0 +1,43 @@
+
+<div id="container">
+  <div id="publicacion">
+    <div class="header-publicacion">
+      <img
+        [src]="personaje().image"
+        alt="{{ personaje().name }}"
+        class="profile-picture"
+      />
+      <h1 class="profile-name">{{ personaje().name }}</h1>
+      <h5>▏{{ truncateText(personaje().created, 10) }}</h5>
+    </div>
+    <div class="cuerpo-publicacion">
+      <p>lorem ipsum etc etc etc etc etc</p>
+      <img
+        class="post-picture"
+        [src]="
+          'https://random.danielpetrica.com/api/random?format=small&' +
+          personaje().id
+        "
+        alt="Imagen publicacion"
+      />
+    </div>
+    <div class="valoracion">
+      <fa-icon [icon]="faStar"></fa-icon>
+      <fa-icon [icon]="faStar"></fa-icon>
+      <fa-icon [icon]="faStar"></fa-icon>
+      <fa-icon [icon]="faStar"></fa-icon>
+      <fa-icon [icon]="faStar"></fa-icon>
+      <p>5.0 Puntuación</p>
+    </div>
+      <button class="ver-comentarios">Ver comentarios</button>
+  </div>
+</div>
+
+<script>
+  let idApiRick = 2;
+  let urlImagen = "https://random.danielpetrica.com/api/random?size=small&";
+  let urlFinal = urlImagen + idApiRick;
+  document.write(
+    '<img src="' + urlFinal + '" alt="Imagen con variable concatenada">'
+  );
+</script>

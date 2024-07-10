@@ -1,5 +1,5 @@
-<p>personajes-lista works!</p>
-
-@for(personaje of personajeState.state().personajes; track personaje){
-    <p>{{personaje.name}}</p>
-}
+<div class="cards-container">
+  @for(personaje of personajeState.state().personajes; track personaje){
+  <app-personajes-publicacione [personaje]="personaje" />
+  }
+</div>

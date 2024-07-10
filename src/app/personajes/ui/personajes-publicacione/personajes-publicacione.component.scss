@@ -1,0 +1,81 @@
+@use "../../../../../public/stylesGlobal/colors.scss";
+
+#container {
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid colors.$contrast-trans-30;
+  margin: 2rem 0;
+}
+
+#publicacion {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-publicacion {
+  margin-left: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid colors.$contrast-trans-50;
+  }
+
+  .profile-name {
+    font-size: 1.5rem;
+    margin: 0;
+
+    h5 {
+      margin: 0;
+      font-weight: normal;
+      color: colors.$contrast-trans-80;
+    }
+  }
+}
+
+.cuerpo-publicacion {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .post-picture {
+    border-radius: 8px;
+    width: 90%;
+    object-fit: contain;
+    border: 1px solid colors.$contrast-trans-30;
+  }
+}
+
+.valoracion {
+  margin-left: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 4px;
+  color: colors.$accent;
+  p {
+    margin-left: 0.2rem;
+    color: colors.$accent-trans-60;
+  }
+}
+
+.ver-comentarios {
+  display: inline-block;
+  align-items: center;
+  background: none;
+  border: none;
+  color: colors.$dark-accent; 
+  text-decoration: none;
+  cursor: pointer;
+  padding-bottom: 1rem;
+}

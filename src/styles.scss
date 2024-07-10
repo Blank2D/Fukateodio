@@ -3,10 +3,18 @@
 
 *{
     font-family: "Rubik", sans-serif;
-    font-size: 16px;     
-    background-color: colors.$primary;
+    font-size: 16px;    
+}
+body{
+    background-color: colors.$accent; 
+
 }
 
 a{
     text-decoration: none;
+}
+
+#container-app{
+    display: flex;
+    gap: 4rem;
 }
