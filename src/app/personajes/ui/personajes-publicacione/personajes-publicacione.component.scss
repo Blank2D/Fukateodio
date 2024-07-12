@@ -1,13 +1,16 @@
 @use "../../../../../public/stylesGlobal/colors.scss";
 
 #container {
+  display: flex;
+  align-items: center;
   background-color: white;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 6px;
   border: 1px solid colors.$contrast-trans-30;
   margin: 2rem 0;
+  
 }
 
 #publicacion {
@@ -17,36 +20,46 @@
 }
 
 .header-publicacion {
-  margin-left: 1rem;
-  padding-top: 1rem;
+  margin: 1rem 1rem;
+  
   display: flex;
   align-items: center;
   justify-content: left;
   gap: 10px;
 
   .profile-picture {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    border: 1px solid colors.$contrast-trans-50;
+    border: 1px solid colors.$contrast-trans-60;
   }
 
-  .profile-name {
-    font-size: 1.5rem;
-    margin: 0;
-
-    h5 {
-      margin: 0;
-      font-weight: normal;
-      color: colors.$contrast-trans-80;
-    }
-  }
+ 
+}
+.profile-name {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+h5 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-weight: normal;
+  color: rgb(158, 158, 158);
 }
 
 .cuerpo-publicacion {
   align-items: center;
   justify-content: center;
   text-align: center;
+  p{
+      text-align: left;
+      font-size: 1.3rem;
+      margin: 1rem 2.3rem;
+
+  }
 
   .post-picture {
     border-radius: 8px;
@@ -62,20 +75,27 @@
   align-items: center;
   justify-content: left;
   gap: 4px;
-  color: colors.$accent;
+  color: #80e200;
+  padding-bottom: 0.3rem;
+  
   p {
     margin-left: 0.2rem;
-    color: colors.$accent-trans-60;
+    color: #62ae00;
   }
 }
 
+
+
 .ver-comentarios {
-  display: inline-block;
+  display: flex;
   align-items: center;
   background: none;
   border: none;
-  color: colors.$dark-accent; 
+  color: colors.$dark-accent;
   text-decoration: none;
   cursor: pointer;
-  padding-bottom: 1rem;
+  margin-left: auto; 
+  margin-right: 2rem;
+  font-weight: 500;
+  color: #62ae00;
 }

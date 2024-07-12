@@ -1,11 +1,16 @@
-
 <div id="container">
   <div id="nombre-app">
-    <h1>Nombre App</h1>
+    
+    <img
+      src="https://www.freepnglogos.com/uploads/rick-and-morty-png/rick-and-morty-portal-moon-mod-download-35.png"
+      alt="gif logo"
+      id="logo-gif"
+    />
+    <h1 id="logo-title">Rickverse Angular </h1>
   </div>
-  <div #options>
+  <div id="option-container">
     <div class="option">
-      <fa-icon [icon]="faHouseChimney"></fa-icon>
+      <fa-icon [icon]="faHouseChimney" ></fa-icon>
       <a [routerLink]="['/home']">Home</a>
     </div>
     <div class="option">
@@ -19,8 +24,8 @@
   </div>
   <div id="exit-option">
     <div class="option">
-        <fa-icon [icon]="faDoorOpen"></fa-icon>
-        <a [routerLink]="['/salir']">Salir</a>
-      </div>
+      <fa-icon [icon]="faDoorOpen"></fa-icon>
+      <a [routerLink]="['/salir']">Salir</a>
+    </div>
   </div>
 </div>

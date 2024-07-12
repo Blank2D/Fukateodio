@@ -3,18 +3,17 @@
 
 *{
     font-family: "Rubik", sans-serif;
-    font-size: 16px;    
 }
 body{
-    background-color: colors.$accent; 
+    background-color: rgb(226, 226, 226); 
+    margin: 0;
+    background-image: url('https://t3.ftcdn.net/jpg/04/27/48/14/360_F_427481493_bbBHJr7OQa1xW8RT8cuyyeqpvSxExTaO.jpg');
+    //Fondo periodico: https://t3.ftcdn.net/jpg/04/27/48/14/360_F_427481493_bbBHJr7OQa1xW8RT8cuyyeqpvSxExTaO.jpg
+  background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza la página */
+  background-position: center; /* Centra la imagen en la pantalla */
 
 }
 
 a{
     text-decoration: none;
-}
-
-#container-app{
-    display: flex;
-    gap: 4rem;
 }
