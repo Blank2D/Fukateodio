@@ -8,20 +8,20 @@
   justify-content: center;
   text-align: center;
   border-radius: 6px;
-  border: 1px solid colors.$contrast-trans-30;
+  border: 1px solid rgba(4, 8, 15, 0.3019607843);
   margin: 2rem 0;
+  -webkit-box-shadow: 0px 0px 8px 4px rgb(192, 255, 109);
+  -moz-box-shadow: 0px 0px 8px 4px rgb(192, 255, 109);
+  box-shadow: 0px 0px 8px 4px rgb(192, 255, 109);
   
 }
 
 #publicacion {
   width: 100%;
-  align-items: center;
-  justify-content: center;
 }
 
 .header-publicacion {
   margin: 1rem 1rem;
-  
   display: flex;
   align-items: center;
   justify-content: left;
@@ -54,18 +54,21 @@ h5 {
   align-items: center;
   justify-content: center;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   p{
-      text-align: left;
-      font-size: 1.3rem;
-      margin: 1rem 2.3rem;
-
+    text-align: left;
+    font-size: 1.3rem;
+    margin: 1rem 2.3rem;
+    height: 50px;
   }
 
   .post-picture {
-    border-radius: 8px;
-    width: 90%;
-    object-fit: contain;
-    border: 1px solid colors.$contrast-trans-30;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(4, 8, 15, 0.3019607843);
   }
 }
 
@@ -98,4 +101,15 @@ h5 {
   margin-right: 2rem;
   font-weight: 500;
   color: #62ae00;
+}
+
+.div-img{
+  display: flex;
+  overflow: hidden;
+  width: 80%;
+  border-radius: 8px;
+  height: 400px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }

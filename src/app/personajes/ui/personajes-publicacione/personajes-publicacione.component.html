@@ -12,14 +12,17 @@
     </div>
     <div class="cuerpo-publicacion">
       <p id="descripcion">{{ descripcion }}</p>
-      <img
-        class="post-picture"
-        [src]="
-          'https://random.danielpetrica.com/api/random?format=small&' +
-          personaje().id
-        "
-        alt="Imagen publicacion"
-      />
+      <div class="div-img">
+        <img
+          class="post-picture"
+          [src]="
+            'https://random.danielpetrica.com/api/random?format=small&' +
+            personaje().id
+          "
+          alt="Imagen publicacion"
+        />
+
+      </div>
     </div>
     <div class="valoracion">
       <fa-icon [icon]="faStar"></fa-icon>

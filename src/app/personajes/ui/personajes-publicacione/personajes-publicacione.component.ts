@@ -1,6 +1,6 @@
 import { Component, input} from '@angular/core';
 import { Result } from '../../../shared/interfaces/personaje.interface';
-import {  faHouseChimney , faMagnifyingGlass, faUser, faDoorOpen, faPlus, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
