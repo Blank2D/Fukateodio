@@ -33,7 +33,7 @@
       <div class="detalle-item">
         <p class="p-label">Creación de la Cuenta:</p>
         <p class="detalle-descripcion">
-          {{ personajeDetailState.personaje()?.created }}
+          {{truncateText(String(personajeDetailState.personaje()?.created), 10) }}
         </p>
       </div>
       <div class="detalle-item">
