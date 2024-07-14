@@ -2,4 +2,9 @@
   @for(personaje of personajeState.state().personajes; track personaje){
   <app-personajes-publicacione [personaje]="personaje" />
   }
+  <div id="btn-container">
+    <button id="show-more-posts-btn" (click)="changePage()">Mostrar Más Publicaciones</button>
+  </div>
 </div>
+
+

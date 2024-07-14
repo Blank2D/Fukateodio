@@ -1,1 +1,209 @@
-<p>perfil works!</p>
+<div id="container">
+  <div class="header-perfil">
+    <img
+      [src]="PerfilService.fotoDePerfil()"
+      alt="Foto-Perfil-Usuario"
+      class="profile-picture"
+    />
+    <div class="profile-data">
+      <h1 class="profile-name">{{ PerfilService.nombre() }}</h1>
+      <h1 class="user-name">&#64;{{ PerfilService.nombrePerfil() }}</h1>
+    </div>
+    <button (click)="toggleModal()" class="edit-profile-button">Editar Perfil</button>
+
+    <div class="profile-stats">
+      <div class="stat-item">
+        <p class="stat-number">{{ PerfilService.nPost() }}</p>
+        <p class="stat-label">Posts</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">{{ PerfilService.nSeguidores() }}</p>
+        <p class="stat-label">Seguidores</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">{{ PerfilService.nSeguidos() }}</p>
+        <p class="stat-label">Seguidos</p>
+      </div>
+    </div>
+  </div>
+  <button id="show-details-button" (click)="toggleDetalles()">
+    {{ detallesVisible ? "Ocultar Detalles" : "Mostrar Detalles" }}
+  </button>
+  <div *ngIf="detallesVisible" class="cuerpo-descripcion">
+    <div class="detalles">
+      <div class="detalle-item">
+        <p class="p-label">Profesion:</p>
+        <p class="detalle-descripcion">{{ PerfilService.trabajo() }}</p>
+      </div>
+      <div class="detalle-item">
+        <p class="p-label">Creacion de la Cuenta:</p>
+        <p class="detalle-descripcion">
+          {{ PerfilService.fechaDeCreacionCuenta() }}
+        </p>
+      </div>
+      <div class="detalle-item">
+        <p class="p-label">Origen:</p>
+        <p class="detalle-descripcion">{{ PerfilService.origen() }}</p>
+      </div>
+      <div class="detalle-item">
+        <p class="p-label">Especie:</p>
+        <p class="detalle-descripcion">{{ PerfilService.especie() }}</p>
+      </div>
+      <div class="detalle-item">
+        <p class="p-label">Genero:</p>
+        <p class="detalle-descripcion">{{ PerfilService.genero() }}</p>
+      </div>
+      <div class="detalle-item">
+        <p class="p-label">Reside en:</p>
+        <p class="detalle-descripcion">{{ PerfilService.residencia() }}</p>
+      </div>
+    </div>
+  </div>
+
+  <p id="descripcion">"{{ PerfilService.descripcion() }}"</p>
+
+  <div id="myModal" class="modal" [class.show]="detallesModal">
+    <div class="modal-content">
+      <span class="close" (click)="toggleModal()">&times;</span>
+      <h2>Editar Perfil</h2>
+      <form
+        #form="ngForm"
+        (ngSubmit)="
+          ActualizarPerfil(
+            nombre.value,
+            nombrePerfil.value,
+            descripcion.value,
+            trabajo.value,
+            origen.value,
+            residencia.value,
+            especie.value,
+            genero.value
+          )
+        "
+      >
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input
+            id="nombre"
+            #nombre
+            name="nombre"
+            type="text"
+            required
+            ngModel
+            [ngModel]="PerfilService.nombre()"
+            maxlength="20"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="nombrePerfil">Nombre de Perfil:</label>
+          <input
+            id="nombrePerfil"
+            #nombrePerfil
+            name="nombrePerfil"
+            type="text"
+            required
+            ngModel
+            [ngModel]="PerfilService.nombrePerfil()"
+            maxlength="20"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion">Descripción:</label>
+          <textarea
+            id="descripcion"
+            #descripcion
+            name="descripcion"
+            required
+            ngModel
+            [ngModel]="PerfilService.descripcion()"
+            maxlength="100"
+            class="form-control"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="trabajo">Profesión:</label>
+          <input
+            id="trabajo"
+            #trabajo
+            name="trabajo"
+            type="text"
+            required
+            ngModel
+            [ngModel]="PerfilService.trabajo()"
+            maxlength="20"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="origen">Origen:</label>
+          <input
+            id="origen"
+            #origen
+            name="origen"
+            type="text"
+            required
+            ngModel
+            [ngModel]="PerfilService.origen()"
+            maxlength="20"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="residencia">Residencia:</label>
+          <input
+            id="residencia"
+            #residencia
+            name="residencia"
+            type="text"
+            required
+            ngModel
+            [ngModel]="PerfilService.residencia()"
+            maxlength="20"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="especie">Especie:</label>
+          <input
+            id="especie"
+            #especie
+            name="especie"
+            type="text"
+            required
+            ngModel
+            [ngModel]="PerfilService.especie()"
+            maxlength="20"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="genero">Género:</label>
+          <select
+            id="genero"
+            name="genero"
+            #genero
+            required
+            [ngModel]="PerfilService.genero()"
+            class="form-control"
+          >
+            <option value="">Seleccione un género</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro/a">Otro/a</option>
+          </select>
+        </div>
+
+        <button [disabled]="form.invalid" class="btn btn-primary">Guardar Cambios</button>
+      </form>
+    </div>
+  </div>
+</div>

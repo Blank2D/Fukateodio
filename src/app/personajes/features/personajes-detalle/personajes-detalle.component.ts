@@ -1,12 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { PersonajeDetailStateService } from '../../data-access/personaje-detail-state.service';
 
 @Component({
   selector: 'app-personajes-detalle',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
+  providers: [PersonajeDetailStateService],
   templateUrl: './personajes-detalle.component.html',
-  styleUrl: './personajes-detalle.component.scss'
+  styleUrls: ['./personajes-detalle.component.scss'],
 })
-export class PersonajesDetalleComponent {
+export default class PersonajesDetalleComponent implements OnInit {
+  detallesVisible: boolean = false;
 
+  personajeDetailState = inject(PersonajeDetailStateService).state;
+
+  private route = inject(ActivatedRoute);
+
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        this.personajeDetailState.getById(id);
+      }
+    });
+  }
+
+  toggleDetalles(): void {
+    this.detallesVisible = !this.detallesVisible;
+  }
 }

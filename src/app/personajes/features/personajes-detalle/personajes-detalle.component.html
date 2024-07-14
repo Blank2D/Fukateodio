@@ -1,1 +1,59 @@
-<p>personajes-detalle works!</p>
+<div id="container">
+  <div class="header-perfil">
+    <img [src]="personajeDetailState.personaje()?.image" alt="Foto-Perfil-Usuario" class="profile-picture" />
+    <div class="profile-data">
+      <h1 class="profile-name">{{ personajeDetailState.personaje()?.name }}</h1>
+      <h1 class="user-name">
+        &#64;{{ personajeDetailState.personaje()?.name }}
+      </h1>
+    </div>
+
+    <div class="profile-stats">
+      <div class="stat-item">
+        <p class="stat-number">1</p>
+        <p class="stat-label">Posts</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">2</p>
+        <p class="stat-label">Seguidores</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-number">3</p>
+        <p class="stat-label">Seguidos</p>
+      </div>
+    </div>
+  </div>
+  <button id="show-details-button" (click)="toggleDetalles()">
+    {{ detallesVisible ? "Ocultar Detalles" : "Mostrar Detalles" }}
+  </button>
+  <div *ngIf="detallesVisible" class="cuerpo-descripcion">
+    <div class="detalles">
+        
+      
+      <div class="detalle-item">
+        <p class="p-label">Creación de la Cuenta:</p>
+        <p class="detalle-descripcion">
+          {{ personajeDetailState.personaje()?.created }}
+        </p>
+      </div>
+      <div class="detalle-item">
+        <p class="p-label">Origen:</p>
+        <p class="detalle-descripcion">{{personajeDetailState.personaje()?.origin?.name}}</p>
+      </div>
+      <div class="detalle-item">
+        <p class="p-label">Especie:</p>
+        <p class="detalle-descripcion">{{personajeDetailState.personaje()?.species}}</p>
+      </div>
+      <div class="detalle-item">
+        <p class="p-label">Género:</p>
+        <p class="detalle-descripcion">{{personajeDetailState.personaje()?.gender}}</p>
+      </div>
+      <div class="detalle-item">
+        <p class="p-label">Reside en:</p>
+        <p class="detalle-descripcion">{{personajeDetailState.personaje()?.location?.name}}</p>
+      </div>
+    </div>
+  </div>
+
+  <p id="descripcion">"{{personajeDetailState.personaje()?.name}} / {{personajeDetailState.personaje()?.species}} / {{personajeDetailState.personaje()?.location?.name}} "</p>
+</div>
