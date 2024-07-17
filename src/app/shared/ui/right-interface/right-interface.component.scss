@@ -11,6 +11,9 @@
   -moz-box-shadow: 10px 0px 10px 0px rgba(153, 153, 153, 0.9);
   box-shadow: 10px 0px 10px 0px rgba(153, 153, 153, 0.9);
 }
+#fa-icon-user{
+  margin-right: 0.5rem;
+}
 
 #nombre-app {
   display: flex;
@@ -79,7 +82,7 @@ button {
   cursor: pointer;
 }
 
-fa-icon {
+#fa-icon-seguir {
   margin: 0;
   font-size: 1rem;
   color: #007bff;
@@ -127,4 +130,160 @@ button h3 {
   -moz-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
   box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
   color: black;
+}
+
+// Animaciones para las sugerencias
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestion-card.fade-out {
+  animation: fadeOutRight 0.5s forwards;
+}
+
+.suggestion-card.fade-in-down {
+  animation: fadeInDown 0.5s forwards;
+  opacity: 1;
+}
+
+.suggestion-card.fade-in-up {
+  animation: fadeInUp 0.5s forwards;
+  opacity: 1;
+}
+
+// Aplicar la animación de entrada inicial
+.suggestion-card.initial {
+  animation: fadeInDown 0.5s forwards;
+  opacity: 1;
+}
+
+// SNACKBAR
+#toast-fa-icon{
+  font-size: 1.5rem;
+  color: #bfff6d;
+}
+#toast {
+  visibility: hidden;
+  max-width: 550px;
+  height: 3rem;
+  margin: auto;
+  background-color: #fff; 
+  color: #000; 
+  text-align: center;
+  border-radius: 2px;
+  border: 2px solid #80c229; 
+  -webkit-box-shadow: 0px 0px 20px 6px rgba(192, 255, 109, 1);
+  -moz-box-shadow: 0px 0px 20px 6px rgba(192, 255, 109, 1);
+  box-shadow: 0px 0px 20px 6px rgba(192, 255, 109, 1);
+  
+  
+  position: fixed;
+  z-index: 1;
+  top: 30px; 
+  right: 30px; 
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+#toast #img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  float: left;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+  background-color: #111;
+  color: #fff;
+}
+
+#toast #desc {
+  font-weight: 500;
+  color: #000;
+  padding: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+  animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;} 
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+
+@keyframes expand {
+  from {min-width: 50px}
+  to {min-width: 350px}
+}
+
+@-webkit-keyframes stay {
+  from {min-width: 350px} 
+  to {min-width: 350px}
+}
+
+@keyframes stay {
+  from {min-width: 350px}
+  to {min-width: 350px}
+}
+
+@-webkit-keyframes shrink {
+  from {min-width: 350px;} 
+  to {min-width: 50px;}
+}
+
+@keyframes shrink {
+  from {min-width: 350px;} 
+  to {min-width: 50px;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 30px; opacity: 1;} 
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
 }
