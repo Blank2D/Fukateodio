@@ -1,24 +1,29 @@
 import { ChangeDetectorRef, Component, input } from '@angular/core';
-import { Result, Root } from '../../../shared/interfaces/personaje.interface';
+import { Result } from '../../../shared/interfaces/personaje.interface';
+import { CommonModule } from '@angular/common';
+import { faUserPlus, faCircleCheck, faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-personaje-card',
   standalone: true,
-  imports: [RouterLink],
+  imports: [CommonModule, FontAwesomeModule, RouterLink],
   templateUrl: './personaje-card.component.html',
-  styleUrl: './personaje-card.component.scss',
+  styleUrls: ['./personaje-card.component.scss'],
 })
 export class PersonajeCardComponent {
   personaje = input.required<Result>();
 
-  getRandomNumber(): number {
-    return Math.floor(Math.random() * 30) + 1;
-  }
-
   followers: string;
   likes: string;
   posts: string;
+  faUserPlus = faUserPlus;
+  faCircleCheck = faCircleCheck;
+  faLink = faLink;
+
+  showFollowModal: boolean = false;
+  showDetailsModal: boolean = false;
 
   constructor(private cdr: ChangeDetectorRef) {
     this.followers = this.generateRandomNumber(2000000);
@@ -28,6 +33,10 @@ export class PersonajeCardComponent {
 
   ngOnInit(): void {
     this.cdr.detectChanges();
+  }
+
+  getRandomNumber(): number {
+    return Math.floor(Math.random() * 30) + 1;
   }
 
   generateRandomNumber(max: number): string {
@@ -45,5 +54,28 @@ export class PersonajeCardComponent {
     } else {
       return (value / 1000000).toFixed(1) + 'M';
     }
+  }
+
+  followUser(): void {
+    this.showFollowModal = true;
+  }
+
+  viewDetails(): void {
+    this.showDetailsModal = true;
+  }
+
+  closeModal(): void {
+    this.showFollowModal = false;
+    this.showDetailsModal = false;
+  }
+  truncateText(text: string, maxLength: number): string {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength);
+    }
+    return text;
+  }
+  
+  String(input: any){
+    return String(input)
   }
 }

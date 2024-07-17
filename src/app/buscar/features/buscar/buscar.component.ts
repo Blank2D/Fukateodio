@@ -28,7 +28,7 @@ export default class BuscarComponent implements OnInit {
 
   async ngOnInit() {
     // Ejecutar el método changePage 41 veces para cargar todos los personajes
-    for (let i = 1; i <= 42; i++) {
+    for (let i = 0; i <= 42; i++) {
       await this.changePage();
     }
   }
@@ -45,4 +45,6 @@ export default class BuscarComponent implements OnInit {
   onSearchTermChange(event: any) {
     this.searchTerm.set(event.target.value);
   }
+
+
 }
