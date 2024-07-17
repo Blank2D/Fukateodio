@@ -2,10 +2,7 @@
   <div class="profile-card">
     <div class="profile-header">
       <img
-        [src]="
-          'https://random.danielpetrica.com/api/random?format=small&' +
-          personaje().id
-        "
+      [src]="'https://random.danielpetrica.com/api/random?format=small&' + getRandomNumber()"
         alt="Header Image"
       />
     </div>
@@ -15,30 +12,30 @@
     <div class="profile-info">
       <h3>{{ personaje().name }}</h3>
       <p>{{ personaje().gender }} / {{ personaje().species }}</p>
-
       <p>{{ personaje().location.name }}</p>
     </div>
     <div class="profile-stats">
       <div>
-        <h4>80K</h4>
+        <h4>{{ followers }}</h4>
         <p>Seguidores</p>
       </div>
       <div>
-        <h4>803K</h4>
+        <h4>{{ likes }}</h4>
         <p>Likes</p>
       </div>
       <div>
-        <h4>1.4K</h4>
+        <h4>{{ posts }}</h4>
         <p>Posts</p>
       </div>
     </div>
-    <div class="buttons"></div>
-    <button class="primary">Seguir</button>
-    <button
-      class="secondary"
-      [routerLink]="['/home/personaje/', personaje().id]"
-    >
-      Ver Perfil
-    </button>
+    <div class="buttons">
+      <button class="primary">Seguir</button>
+      <button
+        class="secondary"
+        [routerLink]="['/home/personaje/', personaje().id]"
+      >
+        Ver Perfil
+      </button>
+    </div>
   </div>
 </div>

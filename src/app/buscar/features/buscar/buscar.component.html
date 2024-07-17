@@ -1,10 +1,9 @@
+<div class="search-container">
+  <input type="text" placeholder="Buscar personajes" (input)="onSearchTermChange($event)" />
+</div>
+
 <div class="cards-container">
-  @for(personaje of personajeState.state().personajes; track personaje){
+  @for(personaje of filteredPersonajes(); track personaje){
   <app-personaje-card [personaje]="personaje" />
   }
-  <div id="btn-container">
-    <button id="show-more-posts-btn" (click)="changePage()">
-      Mostrar Más Publicaciones
-    </button>
-  </div>
 </div>
