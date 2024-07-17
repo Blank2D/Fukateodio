@@ -15,9 +15,9 @@
 
 .profile-card:hover {
   transform: translateY(-10px);
-  -webkit-box-shadow: 0px 0px 8px 4px rgb(192, 255, 109);
-  -moz-box-shadow: 0px 0px 8px 4px rgb(192, 255, 109);
-  box-shadow: 0px 0px 8px 4px rgb(192, 255, 109);
+  -webkit-box-shadow: 0px 0px 20px 10px rgb(192, 255, 109);
+  -moz-box-shadow: 0px 0px 20px 10px rgb(192, 255, 109);
+  box-shadow: 0px 0px 20px 10px rgb(192, 255, 109);
 }
 
 .profile-header {
@@ -148,6 +148,7 @@
   color: black;
 }
 
+/* Estilos generales para el modal */
 .modal {
   position: fixed;
   top: 0;
@@ -159,9 +160,22 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  animation: fadeIn 0.5s forwards; /* Animación de entrada */
 }
 
-.modal-content-follow {
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Animación de deslizamiento hacia arriba */
+@keyframes slideInUp {
+  from {transform: translateY(100px);}
+  to {transform: translateY(0);}
+}
+
+.modal-content-follow, .modal-content-details {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -171,6 +185,7 @@
   -webkit-box-shadow: 0px 0px 10px 10px rgb(140, 211, 47);
   -moz-box-shadow: 0px 0px 10px 10px rgb(140, 211, 47);
   box-shadow: 0px 0px 20px 20px rgb(140, 211, 47);
+  animation: slideInUp 0.5s forwards; /* Animación de entrada */
 }
 
 .profile-picture-modal {
@@ -188,7 +203,6 @@
   box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
 }
 
-
 .close {
   position: absolute;
   top: 10px;
@@ -197,30 +211,17 @@
   font-size: 1.5rem;
 }
 
-#follow-fa-icon{
+#follow-fa-icon {
   color: #96d443;
   font-size: 6rem;
 }
 
-#modal-p{
+#modal-p {
   font-size: 1rem;
   font-style: italic;
   font-weight: 500;
 }
 
-
-.modal-content-details {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  text-align: left;
-  position: relative;
-  -webkit-box-shadow: 0px 0px 10px 10px rgb(140, 211, 47);
-  -moz-box-shadow: 0px 0px 10px 10px rgb(140, 211, 47);
-  box-shadow: 0px 0px 20px 20px rgb(140, 211, 47);
-}
-
-#content-modal-details{
+#content-modal-details {
   margin-bottom: 1rem;
 }
