@@ -15,7 +15,6 @@
 #nombre-app {
   display: flex;
   justify-content: center;
-
   align-items: center;
   width: 13vw;
   background-color: #bfff6d;
@@ -35,4 +34,97 @@
   font-size: 1.7rem;
   font-weight: bolder;
   font-style: italic;
+}
+
+#suggestion-container {
+  margin: 1rem;
+}
+
+.suggestion-card {
+  display: flex;
+  align-items: center;
+  margin: 0.9rem 0;
+  background-color: #eaffce;
+  padding: 0.7rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.9);
+  -moz-box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.9);
+  box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.9);
+}
+
+.suggestion-info {
+  margin-left: 5px;
+}
+
+.suggestion-info h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  margin-left: 0.1rem;
+}
+
+.actions-container {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  gap: 1px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+fa-icon {
+  margin: 0;
+  font-size: 1rem;
+  color: #007bff;
+}
+
+button h3 {
+  color: #007bff;
+  margin: 0;
+  font-weight: 500;
+}
+
+.profile-picture {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #6cb60b;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
+  -moz-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
+  box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
+}
+
+.more-suggestions-container {
+  display: flex;
+  justify-content: center;
+}
+
+.More-Suggestions {
+  margin-top: 0.5rem;
+  background-color: #ffffff;
+  color: #508904;
+  padding: 10px 15px;
+  border: 4px solid #bfff6d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 55px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
+  -moz-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
+  box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
+}
+
+.More-Suggestions:hover {
+  background-color: #bfff6d;
+  -webkit-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
+  -moz-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
+  box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
+  color: black;
 }

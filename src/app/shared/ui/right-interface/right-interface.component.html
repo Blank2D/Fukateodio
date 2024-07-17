@@ -2,4 +2,27 @@
   <div id="nombre-app">
     <h1 id="logo-title">Sugerencias</h1>
   </div>
+  <div id="suggestion-container">
+    <div *ngFor="let character of suggestedCharacters; let i = index" class="suggestion-card">
+      <img
+        class="profile-picture"
+        [src]="character.image"
+        alt="{{ character.name }}"
+        [routerLink]="['/home/personaje/', character.id]"
+      />
+      <div class="suggestion-info">
+        <h3 id="name" [routerLink]="['/home/personaje/', character.id]">
+          {{ character.name }}
+        </h3>
+
+        <button class="actions-container" >
+          <fa-icon [icon]="faUserPlus"></fa-icon>
+          <h3>Seguir</h3>
+        </button>
+      </div>
+    </div>
+    <div class="more-suggestions-container">
+      <button class="More-Suggestions" (click)="onMoreSuggestions()">Nuevas Sugerencias</button>
+    </div>
+  </div>
 </div>
