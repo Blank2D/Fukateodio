@@ -1,15 +1,44 @@
-<div class="card">
-    <img [src]="personaje().image" alt="{{ personaje().name }}" class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">{{ personaje().name }}</h5>
-      <p class="card-text">
-        <strong>Status:</strong> {{ personaje().status }}<br>
-        <strong>Species:</strong> {{ personaje().species }}<br>
-        <strong>Gender:</strong> {{ personaje().gender }}<br>
-        <strong>Origin:</strong> {{ personaje().origin.name }}<br>
-        <strong>Location:</strong> {{ personaje().location.name }}<br>
-      </p>
-      <a [href]="personaje().url" target="_blank" class="btn btn-primary">Ver Perfil</a>
+<div class="container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <img
+        [src]="
+          'https://random.danielpetrica.com/api/random?format=small&' +
+          personaje().id
+        "
+        alt="Header Image"
+      />
     </div>
+    <div class="profile-picture">
+      <img [src]="personaje().image" alt="Profile Picture" />
+    </div>
+    <div class="profile-info">
+      <h3>{{ personaje().name }}</h3>
+      <p>{{ personaje().gender }} / {{ personaje().species }}</p>
+
+      <p>{{ personaje().location.name }}</p>
+    </div>
+    <div class="profile-stats">
+      <div>
+        <h4>80K</h4>
+        <p>Seguidores</p>
+      </div>
+      <div>
+        <h4>803K</h4>
+        <p>Likes</p>
+      </div>
+      <div>
+        <h4>1.4K</h4>
+        <p>Posts</p>
+      </div>
+    </div>
+    <div class="buttons"></div>
+    <button class="primary">Seguir</button>
+    <button
+      class="secondary"
+      [routerLink]="['/home/personaje/', personaje().id]"
+    >
+      Ver Perfil
+    </button>
   </div>
-  
+</div>

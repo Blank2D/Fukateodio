@@ -110,7 +110,7 @@ button h3 {
 }
 
 .More-Suggestions {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   background-color: #ffffff;
   color: #508904;
   padding: 10px 15px;
@@ -119,9 +119,9 @@ button h3 {
   font-weight: 600;
   border-radius: 55px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
-  -moz-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
-  box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
+  -webkit-box-shadow: 0px 0px 10px 3px rgb(140, 211, 47);
+  -moz-box-shadow: 0px 0px 10px 3px rgb(140, 211, 47);
+  box-shadow: 0px 0px 10px 3px rgb(140, 211, 47);
 }
 
 .More-Suggestions:hover {
@@ -180,7 +180,6 @@ button h3 {
   opacity: 1;
 }
 
-// Aplicar la animación de entrada inicial
 .suggestion-card.initial {
   animation: fadeInDown 0.5s forwards;
   opacity: 1;
