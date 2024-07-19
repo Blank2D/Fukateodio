@@ -1,3 +1,5 @@
+@use "../../../../../public/stylesGlobal/colors.scss";
+
 .profile-card {
   margin: 1rem;
   background-color: white;
@@ -43,10 +45,10 @@
 
 .profile-picture img {
   border-radius: 50%;
-  border: 5px solid white;
+  border: 5px solid colors.$white-background;
   width: 100px;
   height: 100px;
-  border: 3px solid #6cb60b;
+  border: 3px solid colors.$tertiary;
   -webkit-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   -moz-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
@@ -60,17 +62,17 @@
 .profile-info h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: #333;
+  color: colors.$normal-text;
 }
 
 .profile-info span {
   font-weight: normal;
-  color: #777;
+  color: colors.$secondary-text;
 }
 
 .profile-info p {
   margin: 5px 0;
-  color: #777;
+  color: colors.$secondary-text;
 }
 
 .profile-stats {
@@ -78,7 +80,7 @@
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid colors.$white-background;
 }
 
 .profile-stats div {
@@ -88,7 +90,7 @@
 .profile-stats h4 {
   margin: 0;
   font-size: 1rem;
-  color: #333;
+  color: colors.$normal-text;
 }
 
 .buttons {
@@ -100,12 +102,12 @@
 .profile-stats p {
   margin: 5px 0 0;
   font-size: 0.8rem;
-  color: #777;
+  color: colors.$secondary-text;
 }
 
 .secondary {
-  background-color: #bfff6d;
-  color: rgb(0, 0, 0);
+  background-color: colors.$secondary;
+  color: colors.$normal-text;
   padding: 10px 15px;
   border: none;
   font-size: 0.9rem;
@@ -120,14 +122,14 @@
 }
 
 .secondary:hover {
-  background-color: #73af24;
+  background-color: colors.$tertiary;
 }
 
 .primary {
-  background-color: #ffffff;
-  color: #2d5000;
+  background-color: colors.$white-background;
+  color: colors.$dark-green-text;
   padding: 10px 15px;
-  border: 4px solid #bfff6d;
+  border: 4px solid colors.$secondary;
   font-size: 0.9rem;
   font-weight: 600;
   border-radius: 55px;
@@ -141,42 +143,48 @@
 }
 
 .primary:hover {
-  background-color: #bfff6d;
+  background-color: colors.$secondary;
   -webkit-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
   -moz-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
   box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
-  color: black;
+  color: colors.$normal-text;
 }
 
-/* Estilos generales para el modal */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: colors.$normal-text;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  animation: fadeIn 0.5s forwards; /* Animación de entrada */
+  animation: fadeIn 0.5s forwards; 
 }
 
-/* Animación de desvanecimiento */
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Animación de deslizamiento hacia arriba */
 @keyframes slideInUp {
-  from {transform: translateY(100px);}
-  to {transform: translateY(0);}
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
-.modal-content-follow, .modal-content-details {
-  background-color: white;
+.modal-content-follow,
+.modal-content-details {
+  background-color:colors.$white-background;
   padding: 20px;
   border-radius: 10px;
   width: 300px;
@@ -185,7 +193,7 @@
   -webkit-box-shadow: 0px 0px 10px 10px rgb(140, 211, 47);
   -moz-box-shadow: 0px 0px 10px 10px rgb(140, 211, 47);
   box-shadow: 0px 0px 20px 20px rgb(140, 211, 47);
-  animation: slideInUp 0.5s forwards; /* Animación de entrada */
+  animation: slideInUp 0.5s forwards; 
 }
 
 .profile-picture-modal {
@@ -194,10 +202,10 @@
 
 .profile-picture-modal img {
   border-radius: 50%;
-  border: 5px solid white;
+  border: 5px solid colors.$white-background;
   width: 100px;
   height: 100px;
-  border: 3px solid #6cb60b;
+  border: 3px solid colors.$tertiary;
   -webkit-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   -moz-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);

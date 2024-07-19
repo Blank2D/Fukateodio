@@ -5,7 +5,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-    background-color: white;
+    background-color: colors.$white-background;
   width: 13vw;
   -webkit-box-shadow: -10px 0px 10px 0px rgba(153, 153, 153, 0.9);
   -moz-box-shadow: -10px 0px 10px 0px rgba(153, 153, 153, 0.9);
@@ -15,7 +15,7 @@
 #nombre-app {
   display: flex;
   align-items: center;
-  background-color: #bfff6d;
+  background-color: colors.$secondary;
   -webkit-box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.9);
   -moz-box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.9);
   box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.9);

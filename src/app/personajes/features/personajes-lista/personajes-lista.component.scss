@@ -1,10 +1,5 @@
-/*.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1rem;
-    gap: 1rem;
-  }*/
+@use "../../../../../public/stylesGlobal/colors.scss";
+
 
 #btn-container {
   display: flex;
@@ -14,8 +9,8 @@
 }
 
 #show-more-posts-btn {
-  background-color: #bfff6d;
-  color: rgb(0, 0, 0);
+  background-color: colors.$secondary;
+  color: colors.$normal-text;
   padding: 10px 15px;
   border: none;
   font-size: 1.2rem;
@@ -28,5 +23,5 @@
 }
 
 #show-more-posts-btn:hover {
-  background-color: #73af24;
+  background-color: colors.$tertiary;
 }

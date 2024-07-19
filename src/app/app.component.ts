@@ -14,4 +14,8 @@ import { RightInterfaceComponent } from './shared/ui/right-interface/right-inter
 export class AppComponent {
   title = 'ProyectoAPI';
  
+  onSubmit() {
+    // Aquí puedes agregar la lógica para manejar el envío del formulario
+    alert('Formulario enviado');
+  }
 }
