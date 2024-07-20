@@ -1,14 +1,44 @@
-@use "../public/stylesGlobal/colors.scss" as colors;
+@use '../public/stylesGlobal/colors-dark.scss' as dark-colors;
+@use '../public/stylesGlobal/colors.scss' as colors;
+
+.light-theme {
+  --secondary: #{colors.$secondary};
+  --tertiary: #{colors.$tertiary};
+  --light-tertiary: #{colors.$light-tertiary};
+  --quaternary: #{colors.$quaternary};
+  --black-opacity-background: #{colors.$black-opacity-background};
+  --white-background: #{colors.$white-background};
+  --normal-text: #{colors.$normal-text};
+  --negative-text: #{colors.$negative-text};
+  --dark-green-text: #{colors.$dark-green-text};
+  --blue-contrast: #{colors.$blue-contrast};
+  --secondary-text: #{colors.$secondary-text};
+  --url-fondo: #{colors.$url-fondo};
+}
+
+.dark-theme {
+  --secondary: #{dark-colors.$secondary};
+  --tertiary: #{dark-colors.$tertiary};
+  --light-tertiary: #{dark-colors.$light-tertiary};
+  --quaternary: #{dark-colors.$quaternary};
+  --black-opacity-background: #{dark-colors.$black-opacity-background};
+  --white-background: #{dark-colors.$white-background};
+  --normal-text: #{dark-colors.$normal-text};
+  --negative-text: #{dark-colors.$negative-text};
+  --dark-green-text: #{dark-colors.$dark-green-text};
+  --blue-contrast: #{dark-colors.$blue-contrast};
+  --secondary-text: #{dark-colors.$secondary-text};
+  --url-fondo: #{dark-colors.$url-fondo};
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 * {
   font-family: "Rubik", sans-serif;
 }
 body {
-  background-color: colors.$white-background;
   margin: 0;
-  background-image: url("https://t3.ftcdn.net/jpg/04/27/48/14/360_F_427481493_bbBHJr7OQa1xW8RT8cuyyeqpvSxExTaO.jpg");
-  //Fondo periodico: https://t3.ftcdn.net/jpg/04/27/48/14/360_F_427481493_bbBHJr7OQa1xW8RT8cuyyeqpvSxExTaO.jpg
+  background-image: var(--url-fondo);
   background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza la página */
   background-position: center; /* Centra la imagen en la pantalla */
 }
@@ -17,5 +47,11 @@ a {
   text-decoration: none;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
