@@ -3,6 +3,8 @@
 #container {
   width: 100%;
   max-width: 400px;
+  min-width: 400px;
+
   margin: 0 auto;
   background: var(--white-background);
   padding: 20px;
@@ -29,11 +31,11 @@ h1 {
 .form-group {
   position: relative;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .form-group input {
-  width: calc(100% - 40px);
+  width: calc(80% - 40px);
   padding: 10px 20px;
   background-color: var(--white-background);
 
@@ -78,8 +80,9 @@ h1 {
 }
 
 .btn {
+    margin-top: 0.5rem;
   padding: 7px;
-  width: 100%;
+  width: 80%;
   background-color: var(--white-background);
   color: var(--tertiary);
   font-weight: 600;

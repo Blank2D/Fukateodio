@@ -2,16 +2,20 @@ import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { PersonajeDetailStateService } from '../../data-access/personaje-detail-state.service';
-
+import { faCameraRetro, faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @Component({
   selector: 'app-personajes-detalle',
   standalone: true,
-  imports: [CommonModule],
-  providers: [PersonajeDetailStateService],
+  imports: [CommonModule, FontAwesomeModule],
+  providers: [PersonajeDetailStateService, ],
   templateUrl: './personajes-detalle.component.html',
   styleUrls: ['./personajes-detalle.component.scss'],
 })
 export default class PersonajesDetalleComponent implements OnInit {
+
+  faCameraRetro =faCameraRetro;
+  faCommentDots = faCommentDots;
   detallesVisible: boolean = false;
   followers: string;
   likes: string;

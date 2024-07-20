@@ -9,7 +9,9 @@
       <h1 class="profile-name">{{ PerfilService.nombre() }}</h1>
       <h1 class="user-name">&#64;{{ PerfilService.nombrePerfil() }}</h1>
     </div>
-    <button (click)="toggleModal()" class="edit-profile-button">Editar Perfil</button>
+    <button (click)="toggleModal()" class="edit-profile-button">
+      Editar Perfil
+    </button>
 
     <div class="profile-stats">
       <div class="stat-item">
@@ -59,8 +61,70 @@
       </div>
     </div>
   </div>
+  
+  <h3><fa-icon id="icon-post" [icon]="faCommentDots"> </fa-icon> Sobre Mi:</h3>
 
   <p id="descripcion">"{{ PerfilService.descripcion() }}"</p>
+  <h3><fa-icon id="icon-post" [icon]="faCameraRetro"> </fa-icon> Publicaciones</h3>
+
+  <div id="image-container">
+    <div class="grid-container">
+      <div class="grid-item">
+        <img
+          src="https://random.danielpetrica.com/api/random?size=small&1"
+          alt="Image 1"
+        />
+      </div>
+      <div class="grid-item">
+        <img
+          src="https://random.danielpetrica.com/api/random?size=small&2"
+          alt="Image 2"
+        />
+      </div>
+      <div class="grid-item">
+        <img
+          src="https://random.danielpetrica.com/api/random?size=small&3"
+          alt="Image 3"
+        />
+      </div>
+      <div class="grid-item">
+        <img
+          src="https://random.danielpetrica.com/api/random?size=small&4"
+          alt="Image 4"
+        />
+      </div>
+      <div class="grid-item">
+        <img
+          src="https://random.danielpetrica.com/api/random?size=small&5"
+          alt="Image 5"
+        />
+      </div>
+      <div class="grid-item">
+        <img
+          src="https://random.danielpetrica.com/api/random?size=small&6"
+          alt="Image 6"
+        />
+      </div>
+      <div class="grid-item">
+        <img
+          src="https://random.danielpetrica.com/api/random?size=small&7"
+          alt="Image 7"
+        />
+      </div>
+      <div class="grid-item">
+        <img
+          src="https://random.danielpetrica.com/api/random?size=small&8"
+          alt="Image 8"
+        />
+      </div>
+      <div class="grid-item">
+        <img
+          src="https://random.danielpetrica.com/api/random?size=small&9"
+          alt="Image 9"
+        />
+      </div>
+    </div>
+  </div>
 
   <div id="myModal" class="modal" [class.show]="detallesModal">
     <div class="modal-content">
@@ -202,7 +266,9 @@
           </select>
         </div>
 
-        <button [disabled]="form.invalid" class="btn btn-primary">Guardar Cambios</button>
+        <button [disabled]="form.invalid" class="btn btn-primary">
+          Guardar Cambios
+        </button>
       </form>
     </div>
   </div>

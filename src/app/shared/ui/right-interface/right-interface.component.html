@@ -1,44 +1,56 @@
-<div id="container">
-  <div id="nombre-app">
-    <h1 id="logo-title">
-      <fa-icon id="fa-icon-user" [icon]="faUserGroup"></fa-icon> Sugerencias
-    </h1>
-  </div>
-  <div id="suggestion-container">
-    <div
-      *ngFor="let character of suggestedCharacters; let i = index"
-      class="suggestion-card"
-    >
-      <img
-        class="profile-picture"
-        [src]="character.image"
-        alt="{{ character.name }}"
-        [routerLink]="['/home/personaje/', character.id]"
-      />
-      <div class="suggestion-info">
-        <h3 id="name" [routerLink]="['/home/personaje/', character.id]">
-          {{ character.name }}
-        </h3>
+<div *ngIf="isLoggedIn$ | async; else loggedOut">
+  <div id="container">
+    <div id="nombre-app">
+      <h1 id="logo-title">
+        <fa-icon id="fa-icon-user" [icon]="faUserGroup"></fa-icon> Sugerencias
+      </h1>
+    </div>
 
-        <button
-          class="actions-container"
-          (click)="FunctionSnackBar(i, character.name)"
-        >
-          <fa-icon id="fa-icon-seguir" [icon]="faUserPlus"></fa-icon>
-          <h3>Seguir</h3>
+    <div id="suggestion-container">
+      <div
+        *ngFor="let character of suggestedCharacters; let i = index"
+        class="suggestion-card"
+      >
+        <img
+          class="profile-picture"
+          [src]="character.image"
+          alt="{{ character.name }}"
+          [routerLink]="['/home/personaje/', character.id]"
+        />
+        <div class="suggestion-info">
+          <h3 id="name" [routerLink]="['/home/personaje/', character.id]">
+            {{ character.name }}
+          </h3>
+
+          <button
+            class="actions-container"
+            (click)="FunctionSnackBar(i, character.name)"
+          >
+            <fa-icon id="fa-icon-seguir" [icon]="faUserPlus"></fa-icon>
+            <h3>Seguir</h3>
+          </button>
+        </div>
+      </div>
+      <div class="more-suggestions-container">
+        <button class="More-Suggestions" (click)="onMoreSuggestions()">
+          Nuevas Sugerencias
         </button>
       </div>
     </div>
-    <div class="more-suggestions-container">
-      <button class="More-Suggestions" (click)="onMoreSuggestions()">
-        Nuevas Sugerencias
-      </button>
+  </div>
+  <div id="toast">
+    <div id="img">
+      <fa-icon id="toast-fa-icon" [icon]="faCircleCheck"></fa-icon>
+    </div>
+    <div id="desc">{{ toastMessage }}</div>
+  </div>
+</div>
+
+<ng-template #loggedOut>
+  <div id="container">
+    <div id="nombre-app">
+      <h1 id="logo-title">Bienvenido</h1>
     </div>
   </div>
-</div>
-<div id="toast">
-  <div id="img">
-    <fa-icon id="toast-fa-icon" [icon]="faCircleCheck"></fa-icon>
-  </div>
-  <div id="desc">{{ toastMessage }}</div>
-</div>
+  <div id="suggestion-container"></div>
+</ng-template>

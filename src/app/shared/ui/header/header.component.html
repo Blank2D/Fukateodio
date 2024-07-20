@@ -7,28 +7,64 @@
     />
     <h1 id="logo-title">Rickverse Angular</h1>
   </div>
-  <div id="option-container">
-    <div class="option">
-      <fa-icon [icon]="faHouseChimney"></fa-icon>
-      <a [routerLink]="['/home']">Home</a>
+  <div *ngIf="isLoggedIn$ | async; else loggedOut">
+    <div id="option-container">
+      <div class="option">
+        <fa-icon [icon]="faHouseChimney"></fa-icon>
+        <a [routerLink]="['/home']">Home</a>
+      </div>
+      <div class="option">
+        <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+        <a [routerLink]="['/buscar']">Buscar</a>
+      </div>
+      <div class="option">
+        <fa-icon [icon]="faUser"></fa-icon>
+        <a [routerLink]="['/perfil']">Perfil</a>
+      </div>
     </div>
-    <div class="option">
-      <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
-      <a [routerLink]="['/buscar']">Buscar</a>
-    </div>
-    <div class="option">
-      <fa-icon [icon]="faUser"></fa-icon>
-      <a [routerLink]="['/perfil']">Perfil</a>
-    </div>
-    <div class="option">
-      <fa-icon [icon]="faUser"></fa-icon>
-      <button (click)="toggleTheme()">Toggle Theme</button>
-    </div>
-  </div>
-  <div id="exit-option">
+
     <div class="option">
       <fa-icon [icon]="faDoorOpen"></fa-icon>
-      <a [routerLink]="['/salir']">Salir</a>
+      <a [routerLink]="['/login']">Cerrar Sesión</a>
     </div>
+    <div id="bottom-options">
+      <div class="option">
+        <button id="theme-toggle-button" (click)="toggleTheme()">
+          <div class="toggle-switch">
+            <div class="toggle-switch-circle"></div>
+            <div class="toggle-switch-icon sun-icon">
+              <fa-icon class="fa-sun" [icon]="faSun"></fa-icon>
+            </div>
+            <div class="toggle-switch-icon moon-icon">
+              <fa-icon class="fa-moon" [icon]="faMoon"></fa-icon>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+
   </div>
+
+  <ng-template #loggedOut>
+    <div class="option">
+      <fa-icon [icon]="faRightToBracket"></fa-icon>
+      <a [routerLink]="['/login']">Iniciar Sesión</a>
+    </div>
+    <div id="bottom-options">
+      <div class="option">
+        <button id="theme-toggle-button" (click)="toggleTheme()">
+          <div class="toggle-switch">
+            <div class="toggle-switch-circle"></div>
+            <div class="toggle-switch-icon sun-icon">
+              <fa-icon class="fa-sun" [icon]="faSun"></fa-icon>
+            </div>
+            <div class="toggle-switch-icon moon-icon">
+              <fa-icon class="fa-moon" [icon]="faMoon"></fa-icon>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </ng-template>
+  
 </div>

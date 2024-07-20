@@ -2,15 +2,20 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../data-access/user.service';
 import { FormsModule } from '@angular/forms';
+import { faCameraRetro, faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FontAwesomeModule],
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.scss',
 })
 export default class PerfilComponent {
+
+  faCameraRetro =faCameraRetro;
+  faCommentDots = faCommentDots;
   detallesVisible: boolean = false;
   detallesModal: boolean = false;
 

@@ -3,7 +3,7 @@
 #container {
   display: flex;
   align-items: center;
-  background-color: colors.$white-background;
+  background-color: var(--white-background);
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -30,7 +30,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 3px solid colors.$tertiary;
+    border: 3px solid var(--tertiary);
     -webkit-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
     box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
@@ -47,7 +47,7 @@ h5 {
   align-items: center;
   margin: 0;
   font-weight: normal;
-  color: colors.$secondary-text;
+  color: var(--secondary-text);
 }
 
 .cuerpo-publicacion {
@@ -61,7 +61,7 @@ h5 {
   p {
     text-align: left;
     font-size: 1.3rem;
-    margin: 1rem 2.3rem;
+    margin: 1rem ;
     height: 50px;
   }
 
@@ -69,7 +69,7 @@ h5 {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border: px solid colors.$normal-text;
+    border: px solid var(--normal-text);
   }
 }
 
@@ -80,12 +80,12 @@ h5 {
   align-items: center;
   justify-content: left;
   gap: 4px;
-  color: colors.$light-tertiary;
+  color: var(--light-tertiary);
   padding-bottom: 0.3rem;
 
   p {
     margin-left: 0.2rem;
-    color: colors.$tertiary;
+    color: var(--tertiary);
   }
 }
 
@@ -96,13 +96,13 @@ h5 {
   align-items: center;
   background: none;
   border: none;
-  color: colors.$normal-text;
+  color: var(--normal-text);
   text-decoration: none;
   cursor: pointer;
   margin-left: auto;
   margin-right: 2rem;
   font-weight: 500;
-  color: colors.$tertiary;
+  color: var(--tertiary);
 }
 
 .div-img {
@@ -117,9 +117,6 @@ h5 {
 }
 
 #descripcion {
-  max-width: 80%;
-  display: flex;
-  text-align: left;
   max-width: 80%;
   display: flex;
   text-align: left;

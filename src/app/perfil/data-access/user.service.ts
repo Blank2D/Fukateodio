@@ -5,16 +5,19 @@ import { effect, Injectable, signal } from '@angular/core';
 })
 export class UserService {
   constructor() {
-    const nombreLocalStorage = localStorage.getItem("nombre");
-    const nombrePerfilLocalStorage = localStorage.getItem("nombrePerfil");
-    const fotoDePerfilLocalStorage = localStorage.getItem("fotoDePerfil");
-    const descripcionLocalStorage = localStorage.getItem("descripcion");
-    const especieLocalStorage = localStorage.getItem("especie");
-    const fechaDeCreacionCuentaLocalStorage = localStorage.getItem("fechaDeCreacionCuenta");
-    const generoLocalStorage = localStorage.getItem("genero");
-    const origenLocalStorage = localStorage.getItem("origen");
-    const residenciaLocalStorage = localStorage.getItem("residencia");
-    const trabajoLocalStorage = localStorage.getItem("trabajo");
+    const nombreLocalStorage = localStorage.getItem('nombre');
+    const nombrePerfilLocalStorage = localStorage.getItem('nombrePerfil');
+    const fotoDePerfilLocalStorage = localStorage.getItem('fotoDePerfil');
+    const descripcionLocalStorage = localStorage.getItem('descripcion');
+    const especieLocalStorage = localStorage.getItem('especie');
+    const fechaDeCreacionCuentaLocalStorage = localStorage.getItem(
+      'fechaDeCreacionCuenta'
+    );
+    const generoLocalStorage = localStorage.getItem('genero');
+    const origenLocalStorage = localStorage.getItem('origen');
+    const residenciaLocalStorage = localStorage.getItem('residencia');
+    const trabajoLocalStorage = localStorage.getItem('trabajo');
+    const contraseñaLocalStorage = localStorage.getItem('contraseña');
 
     if (nombreLocalStorage) {
       this.nombre.set(nombreLocalStorage);
@@ -46,7 +49,12 @@ export class UserService {
     if (trabajoLocalStorage) {
       this.trabajo.set(trabajoLocalStorage);
     }
-    
+    if (trabajoLocalStorage) {
+      this.trabajo.set(trabajoLocalStorage);
+    }
+    if (contraseñaLocalStorage) {
+      this.contraseña.set(contraseñaLocalStorage);
+    }
   }
 
   nombre = signal<string>('Vacio');
@@ -60,6 +68,8 @@ export class UserService {
   residencia = signal<string>('Vacio');
   trabajo = signal<string>('Vacio');
 
+  contraseña = signal<string>('Cris1234');
+
   guarDatosUsuarioLocalStorage = effect(() => {
     localStorage.setItem('nombre', this.nombre());
     localStorage.setItem('nombrePerfil', this.nombrePerfil());
@@ -71,7 +81,12 @@ export class UserService {
     localStorage.setItem('origen', this.origen());
     localStorage.setItem('residencia', this.residencia());
     localStorage.setItem('trabajo', this.trabajo());
+    localStorage.setItem('contraseña', this.contraseña());
   });
+
+  validateUser(username: string, password: string): boolean {
+    return username === this.nombrePerfil() && password === this.contraseña();
+  }
 
   nPost = signal<number>(0);
   nSeguidores = signal<number>(140);

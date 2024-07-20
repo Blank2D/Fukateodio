@@ -15,13 +15,12 @@ export const routes: Routes = [
         loadChildren:() => import('./perfil/features/pefil-shell/perfil.route')
     },
     {
-        path: 'salir',
-        loadChildren:() => import('./salir/features/salir-shell/salir.route')
+        path: 'login',
+        loadChildren:() => import('./login/features/login-shell/login.route')
     },
     {
         path: '',
         loadChildren:() => import('./login/features/login-shell/login.route')
-
     }
     
  

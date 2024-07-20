@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUserPlus, faCircleCheck, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { PersonajesService } from '../../../personajes/data-access/personajes.service';
 import { Result } from '../../interfaces/personaje.interface';
+import { AuthService } from '../../../../app/perfil/data-access/auth.service';
 
 @Component({
   selector: 'app-right-interface',
@@ -20,8 +21,9 @@ export class RightInterfaceComponent implements OnInit {
   toastMessage: string = 'Seguido con Éxito!';
 
   suggestedCharacters: Result[] = [];
+  isLoggedIn$ = this.authService.isLoggedIn;
 
-  constructor(private personajesService: PersonajesService) {}
+  constructor(private personajesService: PersonajesService,private authService: AuthService) {}
 
   ngOnInit(): void {
     this.loadSuggestedCharacters();

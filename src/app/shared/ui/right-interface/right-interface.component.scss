@@ -1,16 +1,16 @@
-@use "../../../../../public/stylesGlobal/colors.scss";
 
 #container {
   position: fixed;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: colors.$white-background;
+  background-color: var(--white-background);
   width: 13vw;
   -webkit-box-shadow: 10px 0px 10px 0px rgba(153, 153, 153, 0.9);
   -moz-box-shadow: 10px 0px 10px 0px rgba(153, 153, 153, 0.9);
   box-shadow: 10px 0px 10px 0px rgba(153, 153, 153, 0.9);
 }
+
 #fa-icon-user {
   margin-right: 0.5rem;
 }
@@ -20,7 +20,7 @@
   justify-content: center;
   align-items: center;
   width: 13vw;
-  background-color: colors.$secondary;
+  background-color: var(--secondary);
   text-align: center;
   -webkit-box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.9);
   -moz-box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.9);
@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   margin: 0.9rem 0;
-  background-color: colors.$white-background;
+  background-color: var(--white-background);
   padding: 0.7rem;
   border-radius: 5px;
   -webkit-box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.9);
@@ -72,7 +72,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: colors.$normal-text;
+  color: var(--normal-text);
   gap: 1px;
 }
 
@@ -85,11 +85,13 @@ button {
 #fa-icon-seguir {
   margin: 0;
   font-size: 1rem;
-  color: colors.$blue-contrast;
+  color: var(--blue-contrast);
+
 }
 
+
 button h3 {
-  color: colors.$blue-contrast;
+  color: var(--blue-contrast);
   margin: 0;
   font-weight: 500;
 }
@@ -98,7 +100,7 @@ button h3 {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 3px solid colors.$tertiary;
+  border: 3px solid var(--tertiary);
   -webkit-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   -moz-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
@@ -111,10 +113,10 @@ button h3 {
 
 .More-Suggestions {
   margin-top: 1rem;
-  background-color: colors.$white-background;
-  color: colors.$tertiary;
+  background-color: var(--white-background);
+  color: var(--tertiary);
   padding: 10px 15px;
-  border: 4px solid colors.$secondary;
+  border: 4px solid var(--secondary);
   font-size: 0.9rem;
   font-weight: 600;
   border-radius: 55px;
@@ -125,11 +127,11 @@ button h3 {
 }
 
 .More-Suggestions:hover {
-  background-color: colors.$secondary;
+  background-color: var(--secondary);
   -webkit-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
   -moz-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
   box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
-  color: colors.$normal-text;
+  color: var(--normal-text);
 }
 
 @keyframes fadeOutRight {
@@ -187,18 +189,20 @@ button h3 {
 // SNACKBAR
 #toast-fa-icon {
   font-size: 1.5rem;
-  color: colors.$secondary;
+
+  color: var(--secondary);
+  color: var(--blue-contrast);
 }
 #toast {
   visibility: hidden;
   max-width: 550px;
   height: 3rem;
   margin: auto;
-  background-color: colors.$white-background;
-  color: colors.$normal-text;
+  background-color: var(--black);
+  color: var(--normal-text);
   text-align: center;
   border-radius: 2px;
-  border: 2px solid colors.$tertiary;
+  border: 2px solid var(--tertiary);
   -webkit-box-shadow: 0px 0px 20px 6px rgba(192, 255, 109, 1);
   -moz-box-shadow: 0px 0px 20px 6px rgba(192, 255, 109, 1);
   box-shadow: 0px 0px 20px 6px rgba(192, 255, 109, 1);
@@ -221,13 +225,14 @@ button h3 {
   padding-top: 16px;
   padding-bottom: 16px;
   box-sizing: border-box;
-  background-color: colors.$normal-text;
-  color: colors.$white-background;
+  background-color: var(--light-tertiary);
+  color: var(--black);
 }
 
 #toast #desc {
   font-weight: 500;
-  color: colors.$normal-text;
+  background-color: var(--white-background);
+  color: var(--normal-text);
   padding: 16px;
   overflow: hidden;
   white-space: nowrap;

@@ -7,41 +7,38 @@ import {
 } from '@angular/forms';
 import { RouterLink, Router } from '@angular/router';
 import { UserService } from '../../../perfil/data-access/user.service';
-import { AuthService } from '../../../perfil/data-access/auth.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-recuperar',
   standalone: true,
   imports: [RouterLink, ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  templateUrl: './recuperar.component.html',
+  styleUrl: './recuperar.component.scss',
 })
-export default class LoginComponent implements OnInit {
+export default class RecuperarComponent {
   loginForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private router: Router,
-    private authService: AuthService
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
       password: ['', Validators.required],
+      newPassword: ['', Validators.required],
     });
   }
 
   onSubmit() {
-    const { username, password } = this.loginForm.value;
-    if (this.userService.validateUser(username, password)) {
-      this.authService.login();
-      alert('Bienvenido');
-
-      this.router.navigate(['/home']);
+    const { newPassword, password } = this.loginForm.value;
+    if (newPassword == password) {
+      this.router.navigate(['/login']);
+      alert('Contraseña Cambiada con Éxito.');
+      this.userService.contraseña.set(password);
     } else {
-      alert('Credenciales incorrectas');
+      alert('Las Contraseñas No Coinciden.');
     }
   }
 }

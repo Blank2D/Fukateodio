@@ -2,7 +2,7 @@
 
 .profile-card {
   margin: 1rem;
-  background-color: white;
+  background-color: var(--white-background);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
@@ -45,10 +45,10 @@
 
 .profile-picture img {
   border-radius: 50%;
-  border: 5px solid colors.$white-background;
+  border: 5px solid var(--white-background);
   width: 100px;
   height: 100px;
-  border: 3px solid colors.$tertiary;
+  border: 3px solid var(--tertiary);
   -webkit-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   -moz-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
@@ -62,17 +62,17 @@
 .profile-info h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: colors.$normal-text;
+  color: var(--normal-text);
 }
 
 .profile-info span {
   font-weight: normal;
-  color: colors.$secondary-text;
+  color: var(--secondary-text);
 }
 
 .profile-info p {
   margin: 5px 0;
-  color: colors.$secondary-text;
+  color: var(--secondary-text);
 }
 
 .profile-stats {
@@ -80,7 +80,7 @@
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
-  border-top: 1px solid colors.$white-background;
+  border-top: 1px solid var(--white-background);
 }
 
 .profile-stats div {
@@ -90,7 +90,7 @@
 .profile-stats h4 {
   margin: 0;
   font-size: 1rem;
-  color: colors.$normal-text;
+  color: var(--normal-text);
 }
 
 .buttons {
@@ -102,12 +102,12 @@
 .profile-stats p {
   margin: 5px 0 0;
   font-size: 0.8rem;
-  color: colors.$secondary-text;
+  color: var(--secondary-text);
 }
 
 .secondary {
-  background-color: colors.$secondary;
-  color: colors.$normal-text;
+  background-color: var(--secondary);
+  color: var(--normal-text);
   padding: 10px 15px;
   border: none;
   font-size: 0.9rem;
@@ -122,14 +122,14 @@
 }
 
 .secondary:hover {
-  background-color: colors.$tertiary;
+  background-color: var(--tertiary);
 }
 
 .primary {
-  background-color: colors.$white-background;
-  color: colors.$dark-green-text;
+  background-color: var(--white-background);
+  color: var(--dark-green-text);
   padding: 10px 15px;
-  border: 4px solid colors.$secondary;
+  border: 4px solid var(--secondary);
   font-size: 0.9rem;
   font-weight: 600;
   border-radius: 55px;
@@ -143,11 +143,11 @@
 }
 
 .primary:hover {
-  background-color: colors.$secondary;
+  background-color: var(--secondary);
   -webkit-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
   -moz-box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
   box-shadow: 0px 0px 0px 3px rgb(140, 211, 47);
-  color: colors.$normal-text;
+  color: var(--normal-text);
 }
 
 .modal {
@@ -156,7 +156,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: colors.$normal-text;
+  background-color: var(--normal-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,7 +184,7 @@
 
 .modal-content-follow,
 .modal-content-details {
-  background-color:colors.$white-background;
+  background-color: var(--white-background);
   padding: 20px;
   border-radius: 10px;
   width: 300px;
@@ -202,10 +202,10 @@
 
 .profile-picture-modal img {
   border-radius: 50%;
-  border: 5px solid colors.$white-background;
+  border: 5px solid var(--white-background);
   width: 100px;
   height: 100px;
-  border: 3px solid colors.$tertiary;
+  border: 3px solid var(--tertiary);
   -webkit-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   -moz-box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
   box-shadow: 0px 0px 10px 3px rgba(192, 255, 109, 1);
