@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faHouseChimney, faMagnifyingGlass, faUser, faDoorOpen, faPlus, faStar, faSun, faMoon, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { faHouseChimney, faMagnifyingGlass, faUser, faDoorOpen, faSun, faMoon, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { ThemeService } from '../../data-access/theme.service';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../../app/perfil/data-access/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -13,24 +14,33 @@ import { AuthService } from '../../../../app/perfil/data-access/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   faHouseChimney = faHouseChimney;
   faMagnifyingGlass = faMagnifyingGlass;
   faUser = faUser;
   faDoorOpen = faDoorOpen;
-  faPlus = faPlus;
-  faStar = faStar;
   faSun = faSun;
   faMoon = faMoon;
   faRightToBracket = faRightToBracket;
 
   isDarkTheme: boolean = false;
+  isLoggedIn$!: Observable<boolean>;
 
-  isLoggedIn$ = this.authService.isLoggedIn;
-
-
-  constructor(private themeService: ThemeService, private authService: AuthService) {
+  constructor(
+    private themeService: ThemeService,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.isDarkTheme = this.themeService.getTheme() === 'dark';
+  }
+
+  ngOnInit(): void {
+    this.isLoggedIn$ = this.authService.isLoggedIn;
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 
   toggleTheme() {

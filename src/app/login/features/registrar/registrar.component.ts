@@ -39,6 +39,7 @@ export default class RegistrarComponent {
       alert('Registro realizado con Éxito.');
       this.userService.contraseña.set(password);
       this.userService.nombrePerfil.set(username);
+      this.userService.nombre.set(username);
 
     } else {
       alert('Rellene el Formulario de forma Correcta.');

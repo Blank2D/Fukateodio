@@ -4,20 +4,32 @@ import { effect, Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class UserService {
+  nombre = signal<string>('Vacio');
+  nombrePerfil = signal<string>('Vacio');
+  fotoDePerfil = signal<string>('https://i.imgflip.com/6h242e.jpg?a471096');
+  descripcion = signal<string>('Vacio');
+  especie = signal<string>('Vacio');
+  fechaDeCreacionCuenta = signal<string>('2024-07-07');
+  genero = signal<string>('Vacio');
+  origen = signal<string>('Vacio');
+  residencia = signal<string>('Vacio');
+  trabajo = signal<string>('Vacio');
+  estado = signal<string>('0'); 
+  contraseña = signal<string>('Cris1234');
+
   constructor() {
     const nombreLocalStorage = localStorage.getItem('nombre');
     const nombrePerfilLocalStorage = localStorage.getItem('nombrePerfil');
     const fotoDePerfilLocalStorage = localStorage.getItem('fotoDePerfil');
     const descripcionLocalStorage = localStorage.getItem('descripcion');
     const especieLocalStorage = localStorage.getItem('especie');
-    const fechaDeCreacionCuentaLocalStorage = localStorage.getItem(
-      'fechaDeCreacionCuenta'
-    );
+    const fechaDeCreacionCuentaLocalStorage = localStorage.getItem('fechaDeCreacionCuenta');
     const generoLocalStorage = localStorage.getItem('genero');
     const origenLocalStorage = localStorage.getItem('origen');
     const residenciaLocalStorage = localStorage.getItem('residencia');
     const trabajoLocalStorage = localStorage.getItem('trabajo');
     const contraseñaLocalStorage = localStorage.getItem('contraseña');
+    const estadoLocalStorage = localStorage.getItem('estado');
 
     if (nombreLocalStorage) {
       this.nombre.set(nombreLocalStorage);
@@ -55,20 +67,10 @@ export class UserService {
     if (contraseñaLocalStorage) {
       this.contraseña.set(contraseñaLocalStorage);
     }
+    if (estadoLocalStorage) {
+      this.estado.set(estadoLocalStorage);
+    }
   }
-
-  nombre = signal<string>('Vacio');
-  nombrePerfil = signal<string>('Vacio');
-  fotoDePerfil = signal<string>('https://i.imgflip.com/6h242e.jpg?a471096');
-  descripcion = signal<string>('Vacio');
-  especie = signal<string>('Vacio');
-  fechaDeCreacionCuenta = signal<string>('2024-07-07');
-  genero = signal<string>('Vacio');
-  origen = signal<string>('Vacio');
-  residencia = signal<string>('Vacio');
-  trabajo = signal<string>('Vacio');
-
-  contraseña = signal<string>('Cris1234');
 
   guarDatosUsuarioLocalStorage = effect(() => {
     localStorage.setItem('nombre', this.nombre());
@@ -82,6 +84,7 @@ export class UserService {
     localStorage.setItem('residencia', this.residencia());
     localStorage.setItem('trabajo', this.trabajo());
     localStorage.setItem('contraseña', this.contraseña());
+    localStorage.setItem('estado', this.estado());
   });
 
   validateUser(username: string, password: string): boolean {

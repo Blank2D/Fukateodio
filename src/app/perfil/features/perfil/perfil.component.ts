@@ -2,7 +2,10 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../data-access/user.service';
 import { FormsModule } from '@angular/forms';
-import { faCameraRetro, faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCameraRetro,
+  faCommentDots,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
@@ -13,8 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrl: './perfil.component.scss',
 })
 export default class PerfilComponent {
-
-  faCameraRetro =faCameraRetro;
+  faCameraRetro = faCameraRetro;
   faCommentDots = faCommentDots;
   detallesVisible: boolean = false;
   detallesModal: boolean = false;
@@ -47,6 +49,10 @@ export default class PerfilComponent {
     this.PerfilService.residencia.set(nuevoresidencia);
     this.PerfilService.especie.set(nuevoespecie);
     this.PerfilService.genero.set(nuevogenero);
-    this.toggleModal(); // Cerrar el modal después de actualizar
+    this.toggleModal();
+  }
+
+  getRandomNumber(): number {
+    return Math.floor(Math.random() * 40) + 1;
   }
 }

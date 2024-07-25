@@ -35,13 +35,12 @@ export default class LoginComponent implements OnInit {
 
   onSubmit() {
     const { username, password } = this.loginForm.value;
-    if (this.userService.validateUser(username, password)) {
-      this.authService.login();
+    if (this.authService.login(username, password)) {
       alert('Bienvenido');
-
       this.router.navigate(['/home']);
     } else {
       alert('Credenciales incorrectas');
     }
   }
 }
+  

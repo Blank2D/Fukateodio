@@ -31,7 +31,7 @@ export default class PersonajesDetalleComponent implements OnInit {
   }
 
   getRandomNumber(): number {
-    return Math.floor(Math.random() * 30) + 1;
+    return Math.floor(Math.random() * 40) + 1;
   }
 
   generateRandomNumber(max: number): string {

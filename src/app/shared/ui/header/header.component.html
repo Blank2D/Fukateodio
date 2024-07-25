@@ -21,11 +21,10 @@
         <fa-icon [icon]="faUser"></fa-icon>
         <a [routerLink]="['/perfil']">Perfil</a>
       </div>
-    </div>
-
-    <div class="option">
-      <fa-icon [icon]="faDoorOpen"></fa-icon>
-      <a [routerLink]="['/login']">Cerrar Sesión</a>
+      <div class="option">
+        <fa-icon [icon]="faDoorOpen"></fa-icon>
+        <a (click)="logout()">Cerrar Sesión</a>
+      </div>
     </div>
     <div id="bottom-options">
       <div class="option">
@@ -42,7 +41,6 @@
         </button>
       </div>
     </div>
-
   </div>
 
   <ng-template #loggedOut>
@@ -66,5 +64,4 @@
       </div>
     </div>
   </ng-template>
-  
 </div>
